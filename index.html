@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Vibrator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Phone Vibrator</h1>
+        <button id="vibrateButton">Vibrate</button>
+    </div>
+
+    <script>
+        const vibrateButton = document.getElementById('vibrateButton');
+
+        function vibrate() {
+            if ("vibrate" in navigator) {
+                // Vibrate for 1000ms (1 second)
+                navigator.vibrate(1000);
+            } else {
+                alert("Vibration is not supported on your device.");
+            }
+        }
+
+        vibrateButton.addEventListener('click', vibrate);
+    </script>
+</body>
+</html>
